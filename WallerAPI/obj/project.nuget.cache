@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "bCmaANX2OHyymo1n6WleRUOxouKNnkFRe879wBJsABrQLLliYvi2qBNztodkxHHN8YU/oIqjysM1VSldD4+JeA==",
+  "dgSpecHash": "OCdhK3aGalxGXle5wRUXTLUSTQ2kOnbpuOJWSNLWJ8Ck0dmzD5DScpu7nYrpnEPKMSmHnqZ6JNGiBZJfzGynrg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WallerAPI\\WallerAPI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Avatar\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Avatar\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Avatar\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Avatar\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Avatar\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Avatar\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
   "logs": []
 }
