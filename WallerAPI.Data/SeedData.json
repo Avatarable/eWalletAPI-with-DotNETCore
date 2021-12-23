@@ -1,0 +1,164 @@
+﻿[
+  {
+    "firstName": "Kirk",
+    "lastName": "Barr",
+    "isActive": true,
+    "email": "kirkbarr@waab.com",
+    "createdAt": "2016-05-08T04:38:32 -01:00",
+    "photo": {
+      "url": "https://randomuser.me/portraits/men69.jpg"
+    },
+    "wallets": [
+      {
+        "address": 5018734092,
+        "balance": 19399.81,
+        "transactions": [],
+        "currency": null
+      }
+    ]
+  },
+  {
+    "firstName": "Sherry",
+    "lastName": "Clemons",
+    "isActive": false,
+    "email": "sherryclemons@waab.com",
+    "createdAt": "2014-08-28T10:57:39 -01:00",
+    "photo": {
+      "url": "https://randomuser.me/portraits/men69.jpg"
+    },
+    "wallets": [
+      {
+        "address": 1878980835,
+        "balance": 19187.3,
+        "transactions": [],
+        "currency": null
+      }
+    ]
+  },
+  {
+    "firstName": "Anderson",
+    "lastName": "Waters",
+    "isActive": false,
+    "email": "andersonwaters@waab.com",
+    "createdAt": "2017-07-16T10:40:02 -01:00",
+    "photo": {
+      "url": "https://randomuser.me/portraits/men69.jpg"
+    },
+    "wallets": [
+      {
+        "address": 9655066731,
+        "balance": 40283.92,
+        "transactions": [],
+        "currency": null
+      }
+    ]
+  },
+  {
+    "firstName": "Willa",
+    "lastName": "Middleton",
+    "isActive": true,
+    "email": "willamiddleton@waab.com",
+    "createdAt": "2015-10-12T01:13:54 -01:00",
+    "photo": {
+      "url": "https://randomuser.me/portraits/men69.jpg"
+    },
+    "wallets": [
+      {
+        "address": 1022016482,
+        "balance": 31487.12,
+        "transactions": [],
+        "currency": null
+      }
+    ]
+  },
+  {
+    "firstName": "Blake",
+    "lastName": "Bradley",
+    "isActive": false,
+    "email": "blakebradley@waab.com",
+    "createdAt": "2014-06-01T03:29:26 -01:00",
+    "photo": {
+      "url": "https://randomuser.me/portraits/men69.jpg"
+    },
+    "wallets": [
+      {
+        "address": 8386375459,
+        "balance": 6995.29,
+        "transactions": [],
+        "currency": null
+      }
+    ]
+  },
+  {
+    "firstName": "Danielle",
+    "lastName": "Rios",
+    "isActive": true,
+    "email": "daniellerios@waab.com",
+    "createdAt": "2017-01-07T01:39:42 -01:00",
+    "photo": {
+      "url": "https://randomuser.me/portraits/men69.jpg"
+    },
+    "wallets": [
+      {
+        "address": 3451849933,
+        "balance": 38871.25,
+        "transactions": [],
+        "currency": null
+      }
+    ]
+  },
+  {
+    "firstName": "Carlson",
+    "lastName": "Sherman",
+    "isActive": true,
+    "email": "carlsonsherman@waab.com",
+    "createdAt": "2020-03-18T10:02:11 -01:00",
+    "photo": {
+      "url": "https://randomuser.me/portraits/men69.jpg"
+    },
+    "wallets": [
+      {
+        "address": 2861246593,
+        "balance": 2216.83,
+        "transactions": [],
+        "currency": null
+      }
+    ]
+  },
+  {
+    "firstName": "Kelly",
+    "lastName": "Sutton",
+    "isActive": true,
+    "email": "kellysutton@waab.com",
+    "createdAt": "2019-03-22T10:59:50 -01:00",
+    "photo": {
+      "url": "https://randomuser.me/portraits/men69.jpg"
+    },
+    "wallets": [
+      {
+        "address": 5950836304,
+        "balance": 21051.24,
+        "transactions": [],
+        "currency": null
+      }
+    ]
+  },
+  {
+    "firstName": "Phelps",
+    "lastName": "Thornton",
+    "isActive": false,
+    "email": "phelpsthornton@waab.com",
+    "createdAt": "2016-12-31T09:37:14 -01:00",
+    "photo": {
+      "url": "https://randomuser.me/portraits/men69.jpg"
+    },
+    "wallets": [
+      {
+        "address": 6688409158,
+        "balance": 48567.18,
+        "transactions": [],
+        "currency": null
+      }
+    ]
+  }
+]

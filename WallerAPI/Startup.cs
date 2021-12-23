@@ -42,8 +42,10 @@ namespace WallerAPI
                 options.SignIn.RequireConfirmedEmail = true;
             }).AddEntityFrameworkStores<WallerDbContext>()
             .AddDefaultTokenProviders();
-            
-            
+
+            services.AddTransient<Seeder>();
+
+
             services.AddScoped<IJWTServices, JWTServices>();
 
             services.AddSwaggerGen(c => 
@@ -90,7 +92,7 @@ namespace WallerAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, Seeder seeder)
         {
             if (env.IsDevelopment())
             {
@@ -109,6 +111,8 @@ namespace WallerAPI
             {
                 endpoints.MapControllers();
             });
+
+            //seeder.Seed().Wait();
         }
     }
 }
