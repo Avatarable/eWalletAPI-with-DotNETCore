@@ -9,9 +9,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.2.3" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.0" />
+	<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.8.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WallerAPI.Data\WallerAPI.Data.csproj" />
     <ProjectReference Include="..\WalletAPI.Services\WalletAPI.Services.csproj" />
   </ItemGroup>
 

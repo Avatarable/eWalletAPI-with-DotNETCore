@@ -1,0 +1,16 @@
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\bin\Debug\netcoreapp3.1\WallerAPI.Data.deps.json
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\bin\Debug\netcoreapp3.1\WallerAPI.Data.runtimeconfig.json
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\bin\Debug\netcoreapp3.1\WallerAPI.Data.runtimeconfig.dev.json
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\bin\Debug\netcoreapp3.1\WallerAPI.Data.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\bin\Debug\netcoreapp3.1\WallerAPI.Data.pdb
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\bin\Debug\netcoreapp3.1\WallerAPI.Models.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\bin\Debug\netcoreapp3.1\WallerAPI.Models.pdb
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\obj\Debug\netcoreapp3.1\WallerAPI.Data.csproj.AssemblyReference.cache
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\obj\Debug\netcoreapp3.1\WallerAPI.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\obj\Debug\netcoreapp3.1\WallerAPI.Data.AssemblyInfoInputs.cache
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\obj\Debug\netcoreapp3.1\WallerAPI.Data.AssemblyInfo.cs
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\obj\Debug\netcoreapp3.1\WallerAPI.Data.csproj.CoreCompileInputs.cache
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\obj\Debug\netcoreapp3.1\WallerAPI.Data.csproj.CopyComplete
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\obj\Debug\netcoreapp3.1\WallerAPI.Data.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\obj\Debug\netcoreapp3.1\WallerAPI.Data.pdb
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI.Data\obj\Debug\netcoreapp3.1\WallerAPI.Data.genruntimeconfig.cache

@@ -17,5 +17,11 @@ namespace WallerAPI.Models.Domain
         public string LastName { get; set; }
         public bool IsActive { get; set; }
         public Photo Photo { get; set; }
+        public IList<Wallet> Wallets { get; set; }
+
+        public User()
+        {
+            Wallets = new List<Wallet>();
+        }
     }
 }

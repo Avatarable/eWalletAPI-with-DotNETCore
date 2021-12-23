@@ -7,7 +7,7 @@ namespace WallerAPI.Models.Domain
     public class Transaction
     {
         public string Id { get; set; }
-        public string Amount { get; set; }
+        public decimal Amount { get; set; }
         public TransactionType TransactionType { get; set; }
         public TransactionStatus TransactionStatus { get; set; }
         public string Description { get; set; }
