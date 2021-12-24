@@ -11,3 +11,5 @@ C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WalletAPI.Services\obj\Debug\netc
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WalletAPI.Services\obj\Debug\netcoreapp3.1\WalletAPI.Services.csproj.CopyComplete
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WalletAPI.Services\obj\Debug\netcoreapp3.1\WalletAPI.Services.dll
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WalletAPI.Services\obj\Debug\netcoreapp3.1\WalletAPI.Services.pdb
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WalletAPI.Services\bin\Debug\netcoreapp3.1\WallerAPI.Data.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WalletAPI.Services\bin\Debug\netcoreapp3.1\WallerAPI.Data.pdb

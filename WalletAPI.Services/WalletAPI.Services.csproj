@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WallerAPI.Data\WallerAPI.Data.csproj" />
     <ProjectReference Include="..\WallerAPI.Models\WallerAPI.Models.csproj" />
   </ItemGroup>
 

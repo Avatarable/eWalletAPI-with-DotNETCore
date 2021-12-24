@@ -43,6 +43,7 @@ namespace WallerAPI
             }).AddEntityFrameworkStores<WallerDbContext>()
             .AddDefaultTokenProviders();
 
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<Seeder>();
 
 

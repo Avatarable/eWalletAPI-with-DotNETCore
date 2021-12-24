@@ -243,6 +243,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WallerAPI.Data\\WallerAPI.Data.csproj": {
+                "projectPath": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WallerAPI.Data\\WallerAPI.Data.csproj"
+              },
               "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WallerAPI.Models\\WallerAPI.Models.csproj": {
                 "projectPath": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WallerAPI.Models\\WallerAPI.Models.csproj"
               }
