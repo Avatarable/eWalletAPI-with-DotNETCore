@@ -40,77 +40,77 @@ namespace WallerAPI.Controllers
             .ToArray();
         }
 
-        [HttpGet("Users")]
-        public IActionResult GetUsers()
-        {
-            return Ok(_work.Users.GetAll());
-        }
+        //[HttpGet("Users")]
+        //public IActionResult GetUsers()
+        //{
+        //    return Ok(_work.Users.GetAll());
+        //}
 
-        [HttpGet("Users/{email}")]
-        public IActionResult GetUser(string email)
-        {
-            return Ok(_work.Users.GetUserByEmail(email));
-        }
+        //[HttpGet("Users/{email}")]
+        //public IActionResult GetUser(string email)
+        //{
+        //    return Ok(_work.Users.GetUserByEmail(email));
+        //}
 
-        [HttpGet("wallets")]
-        public IActionResult GetWallets()
-        {
-            return Ok(_work.Wallets.GetAll());
-        }
+        //[HttpGet("wallets")]
+        //public IActionResult GetWallets()
+        //{
+        //    return Ok(_work.Wallets.GetAll());
+        //}
 
-        [HttpGet("currencies")]
-        public IActionResult GetCurrencies()
-        {
-            return Ok(_work.Currencies.GetAll());
-        }
+        //[HttpGet("currencies")]
+        //public IActionResult GetCurrencies()
+        //{
+        //    return Ok(_work.Currencies.GetAll());
+        //}
 
-        [HttpPost("currencies")]
-        public IActionResult AddCurrency(string name, string abbrev)
-        {
-            var currency = new Currency
-            {
-                Id = Guid.NewGuid().ToString(),
-                Name = name,
-                Abbreviation = abbrev
-            };
-            _work.Currencies.Add(currency);
-            _work.Complete();
-            return Ok();
-        }
+        //[HttpPost("currencies")]
+        //public IActionResult AddCurrency(string name, string abbrev)
+        //{
+        //    var currency = new Currency
+        //    {
+        //        Id = Guid.NewGuid().ToString(),
+        //        Name = name,
+        //        Abbreviation = abbrev
+        //    };
+        //    _work.Currencies.Add(currency);
+        //    _work.Complete();
+        //    return Ok();
+        //}
 
-        [HttpPost("transaction")]
-        public IActionResult CreateTransaction(decimal amount, TransactionType type, 
-            TransactionStatus status, string desc, string receivingAddress, string senderAddress)
-        {
-            var senderWallet = _work.Wallets.GetWalletByAddress(senderAddress);
-            var receiptWallet = _work.Wallets.GetWalletByAddress(receivingAddress);
-            if (senderWallet != null && receiptWallet != null)
-            {
-                senderWallet.Balance -= amount;
-                receiptWallet.Balance += amount;
-            }
+        //[HttpPost("transaction")]
+        //public IActionResult CreateTransaction(decimal amount, TransactionType type, 
+        //    TransactionStatus status, string desc, string receivingAddress, string senderAddress)
+        //{
+        //    var senderWallet = _work.Wallets.GetWalletByAddress(senderAddress);
+        //    var receiptWallet = _work.Wallets.GetWalletByAddress(receivingAddress);
+        //    if (senderWallet != null && receiptWallet != null)
+        //    {
+        //        senderWallet.Balance -= amount;
+        //        receiptWallet.Balance += amount;
+        //    }
 
-            var transaction = new Transaction
-            {
-                Id = Guid.NewGuid().ToString(),
-                Amount = amount,
-                TransactionType = type,
-                TransactionStatus = status,
-                Description = desc,
-                ContractWalletAddress = receivingAddress,
-                Wallet = senderWallet
-            };
+        //    var transaction = new Transaction
+        //    {
+        //        Id = Guid.NewGuid().ToString(),
+        //        Amount = amount,
+        //        TransactionType = type,
+        //        TransactionStatus = status,
+        //        Description = desc,
+        //        ContractWalletAddress = receivingAddress,
+        //        Wallet = senderWallet
+        //    };
 
-            _work.Transactions.Add(transaction);
-            _work.Complete();
-            return Ok();
-        }
+        //    _work.Transactions.Add(transaction);
+        //    _work.Complete();
+        //    return Ok();
+        //}
 
-        [HttpGet("transactions")]
-        public IActionResult GetTransactions()
-        {
-            return Ok(_work.Transactions.GetAll());
-        }
+        //[HttpGet("transactions")]
+        //public IActionResult GetTransactions()
+        //{
+        //    return Ok(_work.Transactions.GetAll());
+        //}
 
     }
 }
