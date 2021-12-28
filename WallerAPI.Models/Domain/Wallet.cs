@@ -14,7 +14,6 @@ namespace WallerAPI.Models.Domain
         public IList<Transaction> Transactions { get; set; }
         public Wallet()
         {
-            Currency = new Currency();
             Transactions = new List<Transaction>();
             Balance = 0.00M;
         }

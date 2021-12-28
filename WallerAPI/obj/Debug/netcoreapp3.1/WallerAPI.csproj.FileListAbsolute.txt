@@ -23,7 +23,6 @@ C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\obj\Debug\netcoreapp3.1\WallerAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\obj\Debug\netcoreapp3.1\WallerAPI.csproj.CopyComplete
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -48,8 +47,6 @@ C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\WallerAPI.Models.dll
-C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\WalletAPI.Services.dll
-C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\WalletAPI.Services.pdb
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\WallerAPI.Models.pdb
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -145,3 +142,9 @@ C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\WallerAPI.Data.dll
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\WallerAPI.Data.pdb
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\WallerAPI.Services.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\WallerAPI.Services.pdb

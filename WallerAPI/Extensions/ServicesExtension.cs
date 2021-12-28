@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using WallerAPI.Services.Implementations;
+using WallerAPI.Services.Interfaces;
 
 namespace WallerAPI.Extensions
 {
@@ -10,6 +8,14 @@ namespace WallerAPI.Extensions
     {
         public static void ConfigureServices(this IServiceCollection services)
         {
+            services.AddScoped<IUtilServices, UtilServices>();
+            services.AddScoped<IAuthServices, AuthServices>();
+
+            services.AddScoped<IUserServices, UserServices>();
+            services.AddScoped<IRoleServices, RoleServices>();
+            services.AddScoped<ITransactionServices, TransactionServices>();
+            services.AddScoped<ICurrencyServices, CurrencyServices>();
+            services.AddScoped<IWalletServices, WalletServices>();
         }
     }
 }

@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -14,9 +15,10 @@ using Newtonsoft.Json.Converters;
 using System;
 using System.Text;
 using WallerAPI.Data;
+using WallerAPI.Extensions;
 using WallerAPI.Models.Domain;
-using WalletAPI.Services.Implementations;
-using WalletAPI.Services.Interfaces;
+using WallerAPI.Services.Implementations;
+using WallerAPI.Services.Interfaces;
 
 namespace WallerAPI
 {
@@ -48,6 +50,8 @@ namespace WallerAPI
 
 
             services.AddScoped<IJWTServices, JWTServices>();
+            services.ConfigureServices();   //service extensions
+            services.AddAutoMapper();
 
             services.AddSwaggerGen(c => 
             {

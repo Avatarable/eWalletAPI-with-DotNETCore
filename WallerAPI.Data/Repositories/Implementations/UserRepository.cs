@@ -44,11 +44,10 @@ namespace WallerAPI.Data.Repositories.Implementations
             return await _userMgr.FindByEmailAsync(email);
         }
 
-        public async Task Register(User user, string password, string role)
+        public async Task<IdentityResult> Register(User user, string password)
         {
-            var res = await _userMgr.CreateAsync(user, "mYP@55word");
-            if (res.Succeeded)
-                await _userMgr.AddToRoleAsync(user, role);
+            return await _userMgr.CreateAsync(user, "mYP@55word");
+            
         }
 
         public void Remove(User user)
@@ -56,9 +55,14 @@ namespace WallerAPI.Data.Repositories.Implementations
             _userMgr.DeleteAsync(user);
         }
 
-        public void RemoveUserFromRole(User user, string role)
+        public async Task<IdentityResult> AddUserToRole(User user, string role)
         {
-            _userMgr.RemoveFromRoleAsync(user, role);
+            return await _userMgr.AddToRoleAsync(user, role);
+        }
+        
+        public async Task<IdentityResult> RemoveUserFromRole(User user, string role)
+        {
+            return await _userMgr.RemoveFromRoleAsync(user, role);
         }
 
         public int RowCount()

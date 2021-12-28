@@ -44,6 +44,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.22, )"
@@ -160,8 +164,8 @@
               "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WallerAPI.Data\\WallerAPI.Data.csproj": {
                 "projectPath": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WallerAPI.Data\\WallerAPI.Data.csproj"
               },
-              "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\WalletAPI.Services.csproj": {
-                "projectPath": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\WalletAPI.Services.csproj"
+              "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\WallerAPI.Services.csproj": {
+                "projectPath": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\WallerAPI.Services.csproj"
               }
             }
           }
@@ -176,6 +180,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.22, )"
@@ -219,12 +227,12 @@
         }
       }
     },
-    "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\WalletAPI.Services.csproj": {
+    "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\WallerAPI.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\WalletAPI.Services.csproj",
-        "projectName": "WalletAPI.Services",
-        "projectPath": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\WalletAPI.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\WallerAPI.Services.csproj",
+        "projectName": "WallerAPI.Services",
+        "projectPath": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\WallerAPI.Services.csproj",
         "packagesPath": "C:\\Users\\Avatar\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Avatar\\Documents\\AB\\Holiday\\WallerAPI\\WalletAPI.Services\\obj\\",
         "projectStyle": "PackageReference",

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,10 @@ namespace WallerAPI.Data.Repositories.Interfaces
 {
     public interface IUserRepository : ICRUDRepository<User>
     {
-        Task Register(User user, string password, string role);
+        Task<IdentityResult> Register(User user, string password);
         Task<User> GetUserByEmail(string email);
-        void RemoveUserFromRole(User user, string role);
+        Task<IdentityResult> AddUserToRole(User user, string role);
+        Task<IdentityResult> RemoveUserFromRole(User user, string role);
+        
     }
 }

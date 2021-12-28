@@ -6,9 +6,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WallerAPI.Models.Domain;
-using WalletAPI.Services.Interfaces;
+using WallerAPI.Services.Interfaces;
 
-namespace WalletAPI.Services.Implementations
+namespace WallerAPI.Services.Implementations
 {
     public class JWTServices : IJWTServices
     {
@@ -30,7 +30,7 @@ namespace WalletAPI.Services.Implementations
             };
 
             // Add Roles to claims
-            foreach(var role in userRoles)
+            foreach (var role in userRoles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
