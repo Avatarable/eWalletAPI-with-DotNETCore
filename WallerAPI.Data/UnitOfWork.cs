@@ -20,7 +20,7 @@ namespace WallerAPI.Data
             _userMgr = userManager;
             _roleMgr = roleManager;
             Users = new UserRepository(_userMgr);
-            Roles = new RoleRepository(_roleMgr, userManager);
+            Roles = new RoleRepository(_roleMgr, _userMgr);
             Wallets = new WalletRepository(_ctx);
             Currencies = new CurrencyRepository(_ctx);
             Transactions = new TransactionRepository(_ctx);

@@ -128,7 +128,7 @@ namespace WallerAPI.Controllers
             }
             else
             {
-                ModelState.AddModelError("Notfound", "There was no record for users found!");
+                ModelState.AddModelError("Not found", "There was no record for users found!");
                 var res = Utility.BuildResponse<List<UserToReturnDTO>>(false, "No results found!", ModelState, null);
                 return NotFound(res);
             }
