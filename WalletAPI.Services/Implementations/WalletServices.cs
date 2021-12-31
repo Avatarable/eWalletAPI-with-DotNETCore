@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using WallerAPI.Data;
 using WallerAPI.Models.Domain;
 using WallerAPI.Services.Interfaces;
@@ -18,7 +19,7 @@ namespace WallerAPI.Services.Implementations
             _util = util;
         }
 
-        public Wallet AddWallet(string currencyName, string userid)
+        public async Task<Wallet> AddWallet(string currencyName, string userid)
         {
             var currency = _work.Currencies.GetCurrencyByName(currencyName);
             if (currency == null)
@@ -26,7 +27,7 @@ namespace WallerAPI.Services.Implementations
                 return null;
             }
 
-            var user = _work.Users.Get(userid);
+            var user = await _work.Users.Get(userid);
             if (user == null)
             {
                 return null;
@@ -35,7 +36,8 @@ namespace WallerAPI.Services.Implementations
             var wallet = new Wallet
             {
                 Id = Guid.NewGuid().ToString(),
-                Currency = currency
+                Currency = currency,
+                User = user
             };
 
             var address = string.Empty;

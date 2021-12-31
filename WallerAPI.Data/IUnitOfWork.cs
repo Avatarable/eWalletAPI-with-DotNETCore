@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using WallerAPI.Data.Repositories.Interfaces;
 
 namespace WallerAPI.Data
@@ -13,5 +15,6 @@ namespace WallerAPI.Data
         ICurrencyRepository Currencies { get; }
         ITransactionRepository Transactions { get; }
         int Complete();
+        Task<IDbContextTransaction> BeginTransaction();
     }
 }

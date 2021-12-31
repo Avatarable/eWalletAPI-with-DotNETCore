@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using WallerAPI.Data.Repositories.Implementations;
 using WallerAPI.Data.Repositories.Interfaces;
 using WallerAPI.Models.Domain;
@@ -40,6 +42,11 @@ namespace WallerAPI.Data
         public int Complete()
         {
             return _ctx.SaveChanges();
+        }
+
+        public Task<IDbContextTransaction> BeginTransaction()
+        {
+            return _ctx.Database.BeginTransactionAsync();
         }
 
         public void Dispose()

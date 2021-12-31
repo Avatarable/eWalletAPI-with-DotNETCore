@@ -20,6 +20,16 @@ namespace WallerAPI.Helpers
 
             CreateMap<User, UserToReturnDTO>()
                 .ForMember(dest => dest.UserId, opt => opt.MapFrom(x => x.Id));
+
+            CreateMap<Wallet, WalletToReturnDTO>()
+                .ForMember(dest => dest.Currency, opt => opt.MapFrom(x => x.Currency.Name));
+
+            CreateMap<Transaction, TransactionResponseDTO>()
+                .ForMember(dest => dest.WalletAddress, opt => opt.MapFrom(x => x.Wallet.Address));
+            
+            CreateMap<Transaction, TransferResponseDTO>()
+                .ForMember(dest => dest.SenderWalletAddress, opt => opt.MapFrom(x => x.Wallet.Address))
+                .ForMember(dest => dest.ReceiverWalletAddress, opt => opt.MapFrom(x => x.ContractWalletAddress));
         }
     }
 }
