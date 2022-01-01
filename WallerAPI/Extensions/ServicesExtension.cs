@@ -16,6 +16,7 @@ namespace WallerAPI.Extensions
             services.AddScoped<ITransactionServices, TransactionServices>();
             services.AddScoped<ICurrencyServices, CurrencyServices>();
             services.AddScoped<IWalletServices, WalletServices>();
+            services.AddScoped<IPhotoServices, PhotoServices>();
         }
     }
 }
