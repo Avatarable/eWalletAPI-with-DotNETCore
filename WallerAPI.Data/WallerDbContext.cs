@@ -14,6 +14,7 @@ namespace WallerAPI.Data
         public DbSet<Wallet> Wallets { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Currency> Currencies { get; set; }
+        public DbSet<Photo> Photos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -26,6 +27,10 @@ namespace WallerAPI.Data
             builder.Entity<Transaction>()
                 .Property(p => p.Amount)
                 .HasColumnType("decimal(14,2)");
+
+            builder.Entity<Photo>()
+                .HasOne(x => x.User)
+                .WithOne(x => x.Photo);
 
         }
     }

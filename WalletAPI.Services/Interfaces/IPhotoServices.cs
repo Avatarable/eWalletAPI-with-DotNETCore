@@ -10,9 +10,10 @@ namespace WallerAPI.Services.Interfaces
     public interface IPhotoServices
     {
         Task<Tuple<bool, PhotoUploadDTO>> UploadPhotoAsync(PhotoUploadDTO model, string userId);
+        Task<bool> UpdateUserPhoto(Photo model, string userId);
         Task<bool> AddPhoto(Photo photo, string userId);
-        Task<IEnumerable<Photo>> GetAllPhotos();
+        IEnumerable<Photo> GetAllPhotos();
         Task<Photo> GetUserPhoto(string userId);
-        Task<bool> DeleteUserPhoto(string userId);
+        Task<bool> DeleteUserPhoto(string publicId, string userId);
     }
 }

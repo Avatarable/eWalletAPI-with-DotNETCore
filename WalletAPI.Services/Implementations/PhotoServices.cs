@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using WallerAPI.Data;
 using WallerAPI.Models.Domain;
 using WallerAPI.Models.DTOs;
 using WallerAPI.Services.Interfaces;
@@ -14,26 +15,49 @@ namespace WallerAPI.Services.Implementations
     public class PhotoServices : IPhotoServices
     {
         private readonly Cloudinary _cloudinary;
-        private readonly IPhotoRepository _photoRepo;
+        private readonly IUnitOfWork _work;
 
         public PhotoServices(IOptions<CloudinarySettings> config,
-            IPhotoRepository photoRepo)
+            IUnitOfWork work)
         {
-            _photoRepo = photoRepo;
-            _cloudinary = Cloudinary();
+            var acc = new Account(config.Value.CloudName, config.Value.ApiKey, config.Value.ApiSecret);
+            _cloudinary = new Cloudinary(acc);
+            _work = work;
         }
 
-        public Task<IEnumerable<Photo>> GetAllPhotos()
+        public IEnumerable<Photo> GetAllPhotos()
         {
-            throw new NotImplementedException();
+            return _work.Photos.GetAll();
         }
         public Task<Photo> GetUserPhoto(string userId)
         {
-            throw new NotImplementedException();
+            return _work.Photos.GetPhotoByUserId(userId);
         }
-        public Task<bool> DeleteUserPhoto(string userId)
+        public async Task<bool> DeleteUserPhoto(string publicId, string userId)
         {
-            throw new NotImplementedException();
+            DeletionParams destroyParams = new DeletionParams(publicId)
+            {
+                ResourceType = ResourceType.Image
+            };
+
+            DeletionResult destroyResult = _cloudinary.Destroy(destroyParams);
+            if (destroyResult.StatusCode.ToString().Equals("OK"))
+            {
+                var photo = await _work.Photos.GetPhotoByPublicId(publicId);
+                if(photo != null)
+                {
+                    _work.Photos.Remove(photo);
+
+                    var user = await _work.Users.Get(userId);
+                    if(user != null)
+                    {
+                        user.Photo = null;
+                    }
+
+                    if (_work.Complete() > 1) return true;
+                }
+            }
+            return false;
         }
 
         public async Task<Tuple<bool, PhotoUploadDTO>> UploadPhotoAsync(PhotoUploadDTO model, string userId)
@@ -57,14 +81,28 @@ namespace WallerAPI.Services.Implementations
                 model.Url = uploadResult.Url.ToString();
                 return new Tuple<bool, PhotoUploadDTO>(true, model);
             }
-
             return new Tuple<bool, PhotoUploadDTO>(true, model);
         }
-        public Task<bool> AddPhoto(Photo photo, string userId)
+        public async Task<bool> AddPhoto(Photo photo, string userId)
         {
-            var res = await _photoRepo.Add(photo);
+            var user = await _work.Users.Get(userId);
+            if(user != null)
+            {
+                _work.Photos.Add(photo);
+                if(_work.Complete() > 1) return true;
+            }
+            return false;
+        }
 
-            return new res;
+        public async Task<bool> UpdateUserPhoto(Photo model, string userId)
+        {
+            var user = await _work.Users.Get(userId);
+            if(user != null)
+            {
+                user.Photo = model;
+                return true;
+            }
+            return false;
         }
     }
 }

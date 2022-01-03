@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "WallerAPI.Models/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "3.1.22",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.22"
         },
         "runtime": {
@@ -28,6 +29,18 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "assemblyVersion": "3.1.22.0",
+            "fileVersion": "3.100.2221.57904"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/3.1.22": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.1.22",
+          "System.IO.Pipelines": "4.7.4"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Http.Features.dll": {
             "assemblyVersion": "3.1.22.0",
             "fileVersion": "3.100.2221.57904"
           }
@@ -262,6 +275,14 @@
             "fileVersion": "4.700.20.21406"
           }
         }
+      },
+      "System.IO.Pipelines/4.7.4": {
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {
+            "assemblyVersion": "4.0.2.3",
+            "fileVersion": "4.700.20.56604"
+          }
+        }
       }
     }
   },
@@ -284,6 +305,13 @@
       "sha512": "sha512-Ha0wJ7k5pOY9494SqFPBRIy2P6qOx85VezBHVIO1Id1zs0rt70tcmhaH9ibrveoJezA/OBLsoXSyTzbxgCyVSA==",
       "path": "microsoft.aspnetcore.cryptography.keyderivation/3.1.22",
       "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.3.1.22.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Features/3.1.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3r4x0qzhw62a3ith73OmkdSfrff4NbGvpJCXjAz/ezTPtrF1pznY6y5nwxzlVX6Fu8OdAAn32gP1MXD2124IBw==",
+      "path": "microsoft.aspnetcore.http.features/3.1.22",
+      "hashPath": "microsoft.aspnetcore.http.features.3.1.22.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore/3.1.22": {
       "type": "package",
@@ -445,6 +473,13 @@
       "sha512": "sha512-j81Lovt90PDAq8kLpaJfJKV/rWdWuEk6jfV+MBkee33vzYLEUsy4gXK8laa9V2nZlLM9VM9yA/OOQxxPEJKAMw==",
       "path": "system.diagnostics.diagnosticsource/4.7.1",
       "hashPath": "system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+    },
+    "System.IO.Pipelines/4.7.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TQqNjDcTVu6eTDB2S0vjSUhn0udEugL93D9zgsOsSiJO1kv1UWDM2o0+79H95I5X+S0VPEzm4ihj6KPwhNEb7g==",
+      "path": "system.io.pipelines/4.7.4",
+      "hashPath": "system.io.pipelines.4.7.4.nupkg.sha512"
     }
   }
 }

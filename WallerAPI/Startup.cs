@@ -17,6 +17,7 @@ using System.Text;
 using WallerAPI.Data;
 using WallerAPI.Extensions;
 using WallerAPI.Models.Domain;
+using WallerAPI.Models.DTOs;
 using WallerAPI.Services.Implementations;
 using WallerAPI.Services.Interfaces;
 
@@ -47,6 +48,7 @@ namespace WallerAPI
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<Seeder>();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
 
 
             services.AddScoped<IJWTServices, JWTServices>();

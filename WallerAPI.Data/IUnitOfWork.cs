@@ -14,6 +14,7 @@ namespace WallerAPI.Data
         IWalletRepository Wallets { get; }
         ICurrencyRepository Currencies { get; }
         ITransactionRepository Transactions { get; }
+        IPhotoRepository Photos { get; }
         int Complete();
         Task<IDbContextTransaction> BeginTransaction();
     }

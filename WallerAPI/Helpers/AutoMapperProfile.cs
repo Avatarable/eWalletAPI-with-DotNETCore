@@ -30,6 +30,10 @@ namespace WallerAPI.Helpers
             CreateMap<Transaction, TransferResponseDTO>()
                 .ForMember(dest => dest.SenderWalletAddress, opt => opt.MapFrom(x => x.Wallet.Address))
                 .ForMember(dest => dest.ReceiverWalletAddress, opt => opt.MapFrom(x => x.ContractWalletAddress));
+
+            CreateMap<Photo, PhotoToReturnDTO>();
+            CreateMap<PhotoUploadDTO, Photo>();
+            CreateMap<PhotoUploadDTO, PhotoToReturnDTO>();
         }
     }
 }

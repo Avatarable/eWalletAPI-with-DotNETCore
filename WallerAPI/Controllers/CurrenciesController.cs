@@ -17,11 +17,11 @@ namespace WallerAPI.Controllers
     [ApiController]
     public class CurrenciesController : ControllerBase
     {
-        private readonly ILogger<UsersController> _logger;
+        private readonly ILogger<CurrenciesController> _logger;
         private readonly ICurrencyServices _currencyServices;
         private readonly IMapper _mapper;
 
-        public CurrenciesController(ILogger<UsersController> logger, 
+        public CurrenciesController(ILogger<CurrenciesController> logger, 
             ICurrencyServices currencyServices, IMapper mapper)
         {
             _logger = logger;

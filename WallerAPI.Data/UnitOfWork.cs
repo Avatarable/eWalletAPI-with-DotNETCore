@@ -26,6 +26,7 @@ namespace WallerAPI.Data
             Wallets = new WalletRepository(_ctx);
             Currencies = new CurrencyRepository(_ctx);
             Transactions = new TransactionRepository(_ctx);
+            Photos = new PhotoRepository(_ctx);
 
         }
 
@@ -38,6 +39,7 @@ namespace WallerAPI.Data
         public ICurrencyRepository Currencies { get; private set; }
 
         public ITransactionRepository Transactions { get; private set; }
+        public IPhotoRepository Photos { get; private set; }
 
         public int Complete()
         {

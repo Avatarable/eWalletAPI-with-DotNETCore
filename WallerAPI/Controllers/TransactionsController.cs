@@ -17,12 +17,12 @@ namespace WallerAPI.Controllers
     [ApiController]
     public class TransactionsController : ControllerBase
     {
-        private readonly ILogger<UsersController> _logger;
+        private readonly ILogger<TransactionsController> _logger;
         private readonly ITransactionServices _transactionServices;
         private readonly IMapper _mapper;
 
         public TransactionsController(IMapper mapper, ITransactionServices transactionServices, 
-            ILogger<UsersController> logger)
+            ILogger<TransactionsController> logger)
         {
             _mapper = mapper;
             _transactionServices = transactionServices;

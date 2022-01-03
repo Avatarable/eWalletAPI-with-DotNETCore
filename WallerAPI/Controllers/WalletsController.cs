@@ -19,12 +19,12 @@ namespace WallerAPI.Controllers
     [ApiController]
     public class WalletsController : ControllerBase
     {
-        private readonly ILogger<UsersController> _logger;
+        private readonly ILogger<WalletsController> _logger;
         private readonly IWalletServices _walletServices;
         private readonly IMapper _mapper;
 
         public WalletsController(IMapper mapper, IWalletServices walletServices, 
-            ILogger<UsersController> logger)
+            ILogger<WalletsController> logger)
         {
             _mapper = mapper;
             _walletServices = walletServices;

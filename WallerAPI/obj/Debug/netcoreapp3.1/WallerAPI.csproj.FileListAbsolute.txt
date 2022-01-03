@@ -148,3 +148,9 @@ C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\WallerAPI.Services.dll
 C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\WallerAPI.Services.pdb
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\obj\Debug\netcoreapp3.1\WallerAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.WebEncoders.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\Avatar\Documents\AB\Holiday\WallerAPI\WallerAPI\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
