@@ -11,9 +11,10 @@ namespace WallerAPI.Services.Implementations
     public class CurrencyServices : ICurrencyServices
     {
         private readonly IUnitOfWork _work;
+        
         public CurrencyServices(IUnitOfWork work)
         {
-            _work = work;
+            _work = work;            
         }
 
         public Currency AddCurrency(string name, string abbrev)
@@ -47,5 +48,7 @@ namespace WallerAPI.Services.Implementations
         {
             return _work.Currencies.GetCurrencyByName(name);
         }
+
+        
     }
 }

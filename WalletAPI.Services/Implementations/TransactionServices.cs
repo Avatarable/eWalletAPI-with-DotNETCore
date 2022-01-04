@@ -1,7 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 using WallerAPI.Data;
 using WallerAPI.Models.Domain;
@@ -12,9 +17,11 @@ namespace WallerAPI.Services.Implementations
     public class TransactionServices : ITransactionServices
     {
         private readonly IUnitOfWork _work;
-        public TransactionServices(IUnitOfWork work)
+        private readonly IConfiguration _config;
+        public TransactionServices(IUnitOfWork work, IConfiguration configuration)
         {
             _work = work;
+            _config = configuration;
         }
 
 
@@ -55,6 +62,7 @@ namespace WallerAPI.Services.Implementations
                 {
                     if (senderWallet != null && receivingWallet != null)
                     {
+                        amount = amount * await ConvertCurrency(amount, senderWallet.Currency.Abbreviation, receivingWallet.Currency.Abbreviation);
                         var transactionDebit = Withdraw(amount, description, senderWalletAddress);
                         var transactionCredit = Deposit(amount, description, receivingWalletAddress);
 
@@ -133,6 +141,35 @@ namespace WallerAPI.Services.Implementations
             _work.Transactions.Add(transaction);
             _work.Complete();
             return transaction;
+        }
+
+        public async Task<decimal> ConvertCurrency(decimal amount, string from, string to)
+        {
+            string apiKey = _config["CurrencyConverter:apiKey"];
+            from = from.Trim();
+            to = to.Trim();
+            string apiUri = $"api/v7/convert?q={from}_{to}&compact=ultra&apiKey={apiKey}";
+
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://free.currconv.com/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await client.GetAsync(apiUri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var conversion = await response.Content.ReadAsStringAsync();
+                    var rate = JsonConvert.DeserializeObject<Dictionary<string, decimal>>(conversion).Values.First();
+                    return rate;
+                    //{"USD_NGN":412.769716}
+                }
+                else
+                {
+                    return 0;
+                }
+            }
         }
 
     }
