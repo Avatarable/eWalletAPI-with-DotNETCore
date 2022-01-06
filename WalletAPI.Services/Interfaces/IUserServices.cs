@@ -17,5 +17,9 @@ namespace WallerAPI.Services.Interfaces
         Task<IdentityResult> RemoveUserFromRole(User user, string role);
         Task<string> GenerateEmailConfirmationToken(User user);
         Task<IdentityResult> ConfirmEmail(User user, string token);
+        public void ActivateUser(User user);
+        public void DeactivateUser(User user);
+        void RemoveUser(User user);
+
     }
 }

@@ -10,6 +10,7 @@ namespace WallerAPI.Extensions
         {
             services.AddScoped<IUtilServices, UtilServices>();
             services.AddScoped<IAuthServices, AuthServices>();
+            services.AddSingleton<INotificationServices, NotificationServices>();
 
             services.AddScoped<IUserServices, UserServices>();
             services.AddScoped<IRoleServices, RoleServices>();

@@ -49,6 +49,9 @@ namespace WallerAPI.Services.Implementations
             return _work.Currencies.GetCurrencyByName(name);
         }
 
-        
+        public void RemoveCurrency(Currency currency)
+        {
+            _work.Currencies.Remove(currency);
+        }
     }
 }

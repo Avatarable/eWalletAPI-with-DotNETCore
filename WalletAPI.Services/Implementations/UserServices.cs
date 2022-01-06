@@ -35,9 +35,24 @@ namespace WallerAPI.Services.Implementations
             return await _work.Users.RemoveUserFromRole(user, role);
         }
 
-        public Task<IdentityResult> ConfirmEmail(User user, string token)
+        public async Task<IdentityResult> ConfirmEmail(User user, string token)
         {
-            return _util.ConfirmEmail(user, token);
+            var res = await _util.ConfirmEmail(user, token);
+            if (res.Succeeded)
+            {
+                ActivateUser(user);
+            }
+            return res;
+        }
+
+        public void ActivateUser(User user)
+        {
+            user.IsActive = true;
+        }
+
+        public void DeactivateUser(User user)
+        {
+            user.IsActive = false;
         }
 
         public Task<string> GenerateEmailConfirmationToken(User user)
@@ -58,6 +73,11 @@ namespace WallerAPI.Services.Implementations
         public async Task<User> GetUserById(string userId)
         {
             return await _work.Users.Get(userId);
+        }
+
+        public void RemoveUser(User user)
+        {
+            _work.Users.Remove(user);
         }
     }
 }

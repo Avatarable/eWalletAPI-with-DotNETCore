@@ -11,5 +11,6 @@ namespace WallerAPI.Services.Interfaces
         Currency GetCurrencyById(string id);
         Currency GetCurrencyByName(string name);
         Currency AddCurrency(string name, string abbrev);
+        void RemoveCurrency(Currency currency);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,6 +17,7 @@ namespace WallerAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PhotosController : ControllerBase
     {
         private readonly ILogger<PhotosController> _logger;

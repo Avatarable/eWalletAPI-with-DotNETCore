@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,6 +16,7 @@ namespace WallerAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class TransactionsController : ControllerBase
     {
         private readonly ILogger<TransactionsController> _logger;
@@ -64,7 +66,6 @@ namespace WallerAPI.Controllers
         [HttpPost("deposit")]
         public IActionResult Deposit(AddTransactionDTO model)
         {
-            //return Ok(_transactionServices.Deposit(model.Amount, model.Description, model.WalletAddress));
             
             var transaction = _transactionServices.Deposit(model.Amount, model.Description, model.WalletAddress);
 

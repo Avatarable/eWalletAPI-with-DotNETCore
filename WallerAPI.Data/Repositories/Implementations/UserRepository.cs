@@ -46,7 +46,7 @@ namespace WallerAPI.Data.Repositories.Implementations
 
         public async Task<IdentityResult> Register(User user, string password)
         {
-            return await _userMgr.CreateAsync(user, "mYP@55word");
+            return await _userMgr.CreateAsync(user, password);
             
         }
 

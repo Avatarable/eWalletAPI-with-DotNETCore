@@ -54,7 +54,7 @@ namespace WallerAPI.Services.Implementations
                         user.Photo = null;
                     }
 
-                    if (_work.Complete() > 1) return true;
+                    if (_work.Complete() > 0) return true;
                 }
             }
             return false;
@@ -88,8 +88,9 @@ namespace WallerAPI.Services.Implementations
             var user = await _work.Users.Get(userId);
             if(user != null)
             {
+                photo.User = user;
                 _work.Photos.Add(photo);
-                if(_work.Complete() > 1) return true;
+                if(_work.Complete() > 0) return true;
             }
             return false;
         }

@@ -25,6 +25,7 @@ namespace WallerAPI.Services.Implementations
         {
             var user = await _work.Users.GetUserByEmail(email);
             var res = await _signinMgr.PasswordSignInAsync(user, password, rememberMe, false);
+
             if (!res.Succeeded)
             {
                 return new LoginCredDTO { Status = false };
