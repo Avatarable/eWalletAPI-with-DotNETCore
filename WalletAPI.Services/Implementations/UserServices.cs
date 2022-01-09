@@ -13,12 +13,10 @@ namespace WallerAPI.Services.Implementations
     public class UserServices : IUserServices
     {
         private readonly IUnitOfWork _work;
-        private readonly IUtilServices _util;
 
-        public UserServices(IUnitOfWork work, IUtilServices util)
+        public UserServices(IUnitOfWork work)
         {
             _work = work;
-            _util = util;
         }
 
         public async Task<IdentityResult> AddUser(User user, string password)
@@ -41,16 +39,6 @@ namespace WallerAPI.Services.Implementations
             return await _work.Users.RemoveUserFromRole(user, role);
         }
 
-        public async Task<IdentityResult> ConfirmEmail(User user, string token)
-        {
-            var res = await _util.ConfirmEmail(user, token);
-            if (res.Succeeded)
-            {
-                ActivateUser(user);
-            }
-            return res;
-        }
-
         public void ActivateUser(User user)
         {
             user.IsActive = true;
@@ -59,11 +47,6 @@ namespace WallerAPI.Services.Implementations
         public void DeactivateUser(User user)
         {
             user.IsActive = false;
-        }
-
-        public Task<string> GenerateEmailConfirmationToken(User user)
-        {
-            return _util.GenerateEmailConfirmationToken(user);
         }
 
         public IEnumerable<User> GetAllUsers()
