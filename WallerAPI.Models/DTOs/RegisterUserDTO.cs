@@ -24,6 +24,9 @@ namespace WallerAPI.Models.DTOs
 
         [Compare("Password", ErrorMessage = "Does not match password")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
         public string Role { get; set; }
+        public string AccountType { get; set; }
     }
 }

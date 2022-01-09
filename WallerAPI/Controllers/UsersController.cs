@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using WallerAPI.Commons;
@@ -37,7 +38,7 @@ namespace WallerAPI.Controllers
             _notify = notify;
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<IActionResult> AddUser(RegisterUserDTO model)
         {
             // check if user already exist
@@ -68,6 +69,8 @@ namespace WallerAPI.Controllers
                 }
                 return BadRequest(Utility.BuildResponse<string>(false, "Failed to add user role!", ModelState, null));
             }
+            var claim = new Claim("AccountType", model.AccountType);
+            await _userServices.AddUserClaim(user, claim);
 
             //  generate email confirmation token and url
             var token = await _userServices.GenerateEmailConfirmationToken(user);
@@ -90,23 +93,17 @@ namespace WallerAPI.Controllers
             return Ok(Utility.BuildResponse(true, "New user added! Check email for confirmation link.", null, new { details, ConfimationLink = urlString }));
         }
 
-        [HttpGet("confirm-email")]
-        public async Task<IActionResult> ConfirmEmail(string email, string token)
+        [HttpPost("confirm-email")]
+        public async Task<IActionResult> ConfirmEmail(ConfirmEmailDTO model)
         {
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(token))
-            {
-                ModelState.AddModelError("Invalid", "UserId and token is required");
-                return BadRequest(Utility.BuildResponse<object>(false, "UserId or token is empty!", ModelState, null));
-            }
-
-            var user = await _userServices.GetUserByEmail(email);
+            var user = await _userServices.GetUserByEmail(model.Email);
             if (user == null)
             {
-                ModelState.AddModelError("NotFound", $"User with email: {email} was not found");
+                ModelState.AddModelError("NotFound", $"User with email: {model.Email} was not found");
                 return NotFound(Utility.BuildResponse<object>(false, "User not found!", ModelState, null));
             }
 
-            var res = await _userServices.ConfirmEmail(user, token);
+            var res = await _userServices.ConfirmEmail(user, model.Token);
             if (!res.Succeeded)
             {
                 foreach (var err in res.Errors)

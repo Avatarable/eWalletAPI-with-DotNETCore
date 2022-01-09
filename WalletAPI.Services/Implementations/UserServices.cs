@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using WallerAPI.Data;
@@ -28,6 +29,11 @@ namespace WallerAPI.Services.Implementations
         public async Task<IdentityResult> AddUserToRole(User user, string role)
         {
             return await _work.Users.AddUserToRole(user, role);
+        }
+
+        public async Task<IdentityResult> AddUserClaim(User user, Claim claim)
+        {
+            return await _work.Users.AddUserClaim(user, claim);
         }
 
         public async Task<IdentityResult> RemoveUserFromRole(User user, string role)

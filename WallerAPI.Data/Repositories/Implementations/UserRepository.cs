@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using WallerAPI.Data.Repositories.Interfaces;
@@ -58,6 +59,16 @@ namespace WallerAPI.Data.Repositories.Implementations
         public async Task<IdentityResult> AddUserToRole(User user, string role)
         {
             return await _userMgr.AddToRoleAsync(user, role);
+        }
+
+        public async Task<IdentityResult> AddUserClaim(User user, Claim claim)
+        {
+            return await _userMgr.AddClaimAsync(user, claim);
+        }
+
+        public async Task<IList<Claim>> GetUserClaims(User user)
+        {
+            return await _userMgr.GetClaimsAsync(user);
         }
         
         public async Task<IdentityResult> RemoveUserFromRole(User user, string role)

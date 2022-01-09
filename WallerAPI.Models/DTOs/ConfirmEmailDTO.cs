@@ -5,14 +5,11 @@ using System.Text;
 
 namespace WallerAPI.Models.DTOs
 {
-    public class LoginDTO
+    public class ConfirmEmailDTO
     {
         [Required]
-        public string Email { get; set; }
-
+        public string Token { get; set; }
         [Required]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
-        //public bool RememberMe { get; set; }
+        public string Email { get; set; }
     }
 }

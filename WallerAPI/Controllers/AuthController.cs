@@ -26,7 +26,7 @@ namespace WallerAPI.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromForm] LoginDTO model)
+        public async Task<IActionResult> Login(LoginDTO model)
         {
             var user = await _userMgr.FindByEmailAsync(model.Email);
             if (user == null)
@@ -38,7 +38,10 @@ namespace WallerAPI.Controllers
             // check if user's email is confirmed
             if (await _userMgr.IsEmailConfirmedAsync(user))
             {
-                var res = await _authServices.Login(model.Email, model.Password, model.RememberMe);
+                // added for test
+                bool rememberMe = false;
+
+                var res = await _authServices.Login(model.Email, model.Password, rememberMe);
                 if (!res.Status)
                 {
                     ModelState.AddModelError("Invalid", "Credentials provided by the user is invalid");

@@ -19,15 +19,12 @@ namespace WallerAPI.Services.Implementations
             _config = config;
         }
 
-        public string GenerateToken(User user, List<string> userRoles)
+        public string GenerateToken(User user, List<string> userRoles, IList<Claim> claims)
         {
             // Add claims
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}"),
-                new Claim(ClaimTypes.Email, $"{user.Email}"),
-            };
+            claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id));
+            claims.Add(new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}"));
+            claims.Add(new Claim(ClaimTypes.Email, $"{user.Email}"));
 
             // Add Roles to claims
             foreach (var role in userRoles)
@@ -38,7 +35,7 @@ namespace WallerAPI.Services.Implementations
             // set secret key
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("JWT:SecretKey").Value));
 
-            // define security token descritpor
+            // define security token descriptor
             var securityTokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),

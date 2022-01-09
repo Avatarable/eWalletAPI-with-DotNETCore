@@ -55,6 +55,8 @@ namespace WallerAPI
             services.ConfigureServices();   //service extensions
             services.AddAutoMapper();
 
+            services.AddCors();
+
             services.AddSwaggerGen(c => 
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Waller eWallet", Version = "v1" });
@@ -110,6 +112,13 @@ namespace WallerAPI
             }
 
             app.UseRouting();
+
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("http://localhost:4200");
+                builder.AllowAnyMethod();
+                builder.AllowAnyHeader();
+            });
 
             app.UseAuthentication();
             app.UseAuthorization();

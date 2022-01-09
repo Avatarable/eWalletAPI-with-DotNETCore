@@ -32,7 +32,8 @@ namespace WallerAPI.Services.Implementations
             }
 
             var userRoles = await _work.Roles.GetUserRoles(user);
-            var token = _jwtServices.GenerateToken(user, userRoles.ToList());
+            var claims = await _work.Users.GetUserClaims(user);
+            var token = _jwtServices.GenerateToken(user, userRoles.ToList(), claims);
 
             return new LoginCredDTO { Status = true, Id = user.Id, Token = token };
         }

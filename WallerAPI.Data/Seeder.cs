@@ -30,13 +30,14 @@ namespace WallerAPI.Data
 
             try
             {
-                var roles = new string[] { "Admin", "Noob", "Elite" };
+                var roles = new string[] { "Admin", "Regular" };
                 if (!_roleMgr.Roles.Any())
                 {
                     foreach(var role in roles)
                     {
                         await _roleMgr.CreateAsync(new IdentityRole(role));
                     }
+                    _ctx.SaveChanges();
                 }
 
                 var currencies = new List<Currency>();
