@@ -80,7 +80,7 @@ namespace WallerAPI.Controllers
             }
 
             var user = _mapper.Map<User>(model);
-            var addUserResponse = await _userServices.AddUser(user, model.Password);
+            var addUserResponse = await _authServices.Register(user, model.Password);
             if (!addUserResponse.Succeeded)
             {
                 foreach (var err in addUserResponse.Errors)

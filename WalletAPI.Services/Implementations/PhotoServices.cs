@@ -1,5 +1,6 @@
 ﻿using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -16,13 +17,15 @@ namespace WallerAPI.Services.Implementations
     {
         private readonly Cloudinary _cloudinary;
         private readonly IUnitOfWork _work;
+        private readonly UserManager<User> _userMgr;
 
         public PhotoServices(IOptions<CloudinarySettings> config,
-            IUnitOfWork work)
+            IUnitOfWork work, UserManager<User> userMgr)
         {
             var acc = new Account(config.Value.CloudName, config.Value.ApiKey, config.Value.ApiSecret);
             _cloudinary = new Cloudinary(acc);
             _work = work;
+            _userMgr = userMgr;
         }
 
         public IEnumerable<Photo> GetAllPhotos()
@@ -48,8 +51,8 @@ namespace WallerAPI.Services.Implementations
                 {
                     _work.Photos.Remove(photo);
 
-                    var user = await _work.Users.Get(userId);
-                    if(user != null)
+                    var user = await _userMgr.FindByIdAsync(userId);
+                    if (user != null)
                     {
                         user.Photo = null;
                     }
@@ -85,8 +88,8 @@ namespace WallerAPI.Services.Implementations
         }
         public async Task<bool> AddPhoto(Photo photo, string userId)
         {
-            var user = await _work.Users.Get(userId);
-            if(user != null)
+            var user = await _userMgr.FindByIdAsync(userId);
+            if (user != null)
             {
                 photo.User = user;
                 _work.Photos.Add(photo);
@@ -97,8 +100,8 @@ namespace WallerAPI.Services.Implementations
 
         public async Task<bool> UpdateUserPhoto(Photo model, string userId)
         {
-            var user = await _work.Users.Get(userId);
-            if(user != null)
+            var user = await _userMgr.FindByIdAsync(userId);
+            if (user != null)
             {
                 user.Photo = model;
                 return true;

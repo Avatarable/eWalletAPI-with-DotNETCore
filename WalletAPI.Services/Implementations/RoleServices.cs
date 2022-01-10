@@ -10,19 +10,20 @@ namespace WallerAPI.Services.Implementations
 {
     public class RoleServices : IRoleServices
     {
-        private readonly IUnitOfWork _work;
-        public RoleServices(IUnitOfWork work)
+        private readonly RoleManager<IdentityRole> _roleMgr;
+        public RoleServices(RoleManager<IdentityRole> roleManager)
         {
-            _work = work;
+            _roleMgr = roleManager;
         }
         public async Task<IdentityResult> AddRole(string name)
         {
-            return await _work.Roles.AddRole(name);
+            return await _roleMgr.CreateAsync(new IdentityRole(name));
         }
 
         public async Task<IdentityResult> RemoveRole(string roleName)
         {
-            return await _work.Roles.RemoveRole(roleName);
+            var roleToRemove = await _roleMgr.FindByNameAsync(roleName);
+            return await _roleMgr.DeleteAsync(roleToRemove);
         }
     }
 }

@@ -10,7 +10,5 @@ namespace WallerAPI.Services.Interfaces
     public interface IUtilServices
     {
         public string GenerateAddress();
-        Task<string> GenerateEmailConfirmationToken(User user);
-        Task<IdentityResult> ConfirmEmail(User user, string token);
     }
 }

@@ -20,7 +20,7 @@ namespace WallerAPI.Services.Interfaces
         
         public void ActivateUser(User user);
         public void DeactivateUser(User user);
-        void RemoveUser(User user);
+        Task RemoveUser(User user);
 
     }
 }

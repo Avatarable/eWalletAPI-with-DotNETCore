@@ -13,26 +13,16 @@ namespace WallerAPI.Data
     public class UnitOfWork : IUnitOfWork
     {
         private readonly WallerDbContext _ctx;
-        private readonly UserManager<User> _userMgr;
-        private readonly RoleManager<IdentityRole> _roleMgr;
 
-        public UnitOfWork(WallerDbContext ctx, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        public UnitOfWork(WallerDbContext ctx)
         {
             _ctx = ctx;
-            _userMgr = userManager;
-            _roleMgr = roleManager;
-            Users = new UserRepository(_userMgr);
-            Roles = new RoleRepository(_roleMgr, _userMgr);
             Wallets = new WalletRepository(_ctx);
             Currencies = new CurrencyRepository(_ctx);
             Transactions = new TransactionRepository(_ctx);
             Photos = new PhotoRepository(_ctx);
 
         }
-
-        public IUserRepository Users { get; private set; }
-
-        public IRoleRepository Roles { get; private set; }
 
         public IWalletRepository Wallets { get; private set; }
 

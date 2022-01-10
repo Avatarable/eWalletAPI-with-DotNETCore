@@ -12,28 +12,27 @@ namespace WallerAPI.Services.Implementations
 {
     public class UserServices : IUserServices
     {
-        private readonly IUnitOfWork _work;
+        private readonly UserManager<User> _userMgr;
 
-        public UserServices(IUnitOfWork work)
+        public UserServices(UserManager<User> userManager)
         {
-            _work = work;
+            _userMgr = userManager;
         }
 
-        
 
         public async Task<IdentityResult> AddUserToRole(User user, string role)
         {
-            return await _work.Users.AddUserToRole(user, role);
+            return await _userMgr.AddToRoleAsync(user, role);
         }
 
         public async Task<IdentityResult> AddUserClaim(User user, Claim claim)
         {
-            return await _work.Users.AddUserClaim(user, claim);
+            return await _userMgr.AddClaimAsync(user, claim);
         }
 
         public async Task<IdentityResult> RemoveUserFromRole(User user, string role)
         {
-            return await _work.Users.RemoveUserFromRole(user, role);
+            return await _userMgr.RemoveFromRoleAsync(user, role);
         }
 
         public void ActivateUser(User user)
@@ -48,22 +47,22 @@ namespace WallerAPI.Services.Implementations
 
         public IEnumerable<User> GetAllUsers()
         {
-            return _work.Users.GetAll();
+            return _userMgr.Users;
         }
 
         public async Task<User> GetUserByEmail(string email)
         {
-            return await _work.Users.GetUserByEmail(email);
+            return await _userMgr.FindByEmailAsync(email);
         }
 
         public async Task<User> GetUserById(string userId)
         {
-            return await _work.Users.Get(userId);
+            return await _userMgr.FindByIdAsync(userId);
         }
 
-        public void RemoveUser(User user)
+        public async Task RemoveUser(User user)
         {
-            _work.Users.Remove(user);
+            await _userMgr.DeleteAsync(user);
         }
     }
 }

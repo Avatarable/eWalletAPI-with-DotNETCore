@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,17 @@ namespace WallerAPI.Services.Implementations
     {
         private readonly IUnitOfWork _work;
         private readonly IUtilServices _util;
+        private readonly UserManager<User> _userMgr;
 
-        public WalletServices(IUnitOfWork work, IUtilServices util)
+        public WalletServices(IUnitOfWork work, UserManager<User> userManager, IUtilServices util)
         {
             _work = work;
             _util = util;
+            _userMgr = userManager;
+
         }
 
-        public async Task<Wallet> AddWallet(string currencyName, string userid)
+        public async Task<Wallet> AddWallet(string currencyName, string userId)
         {
             var currency = _work.Currencies.GetCurrencyByName(currencyName);
             if (currency == null)
@@ -27,7 +31,7 @@ namespace WallerAPI.Services.Implementations
                 return null;
             }
 
-            var user = await _work.Users.Get(userid);
+            var user = await _userMgr.FindByIdAsync(userId);
             if (user == null)
             {
                 return null;

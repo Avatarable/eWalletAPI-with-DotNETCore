@@ -9,8 +9,6 @@ namespace WallerAPI.Data
 {
     public interface IUnitOfWork : IDisposable
     {
-        IUserRepository Users { get; }
-        IRoleRepository Roles { get; }
         IWalletRepository Wallets { get; }
         ICurrencyRepository Currencies { get; }
         ITransactionRepository Transactions { get; }
