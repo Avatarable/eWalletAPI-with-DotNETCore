@@ -19,10 +19,7 @@ namespace WallerAPI.Services.Implementations
             _work = work;
         }
 
-        public async Task<IdentityResult> AddUser(User user, string password)
-        {
-            return await _work.Users.Register(user, password);
-        }
+        
 
         public async Task<IdentityResult> AddUserToRole(User user, string role)
         {

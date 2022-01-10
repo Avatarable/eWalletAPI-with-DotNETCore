@@ -13,5 +13,6 @@ namespace WallerAPI.Services.Interfaces
         Task<LoginCredDTO> Login(string email, string password, bool rememberMe);
         Task<string> GenerateEmailConfirmationToken(User user);
         Task<IdentityResult> ConfirmEmail(User user, string token);
+        Task<IdentityResult> Register(User user, string password);
     }
 }

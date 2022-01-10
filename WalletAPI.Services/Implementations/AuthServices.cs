@@ -55,5 +55,10 @@ namespace WallerAPI.Services.Implementations
             }
             return res;
         }
+
+        public async Task<IdentityResult> Register(User user, string password)
+        {
+            return await _work.Users.Register(user, password);
+        }
     }
 }
